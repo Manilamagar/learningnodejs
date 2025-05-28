@@ -1,0 +1,48 @@
+
+
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Button style */
+#themeToggle {
+    margin-left: auto;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+    color: #ffffff !important;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Add body dark mode sync if needed */

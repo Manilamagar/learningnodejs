@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="public/css/navigation.css"
+<%- include('Component/Navigation.ejs') %>
+<main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">Library Management System</h1>
+            <p class="hero-description">
+                Our Library Management System helps you organize, track, and manage your library resources efficiently. 
+                Whether you are a student, librarian, or book lover, our system provides easy access to a vast collection of books and resources.
+            </p>
+        </section>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3 class="feature-title">Search and Borrow Books</h3>
+                <p class="feature-description">Easily search through our extensive catalog and borrow books with just a few clicks.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3 class="feature-title">User Account Management</h3>
+                <p class="feature-description">Manage user accounts and book inventory with our comprehensive management tools.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3 class="feature-title">Track Due Dates</h3>
+                <p class="feature-description">Never miss a return date with our automated tracking and notification system.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3 class="feature-title">Digital Resources</h3>
+                <p class="feature-description">Access digital resources and get personalized book recommendations.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.className = 'fas fa-sun';
+        }
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Navigation link active state
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>

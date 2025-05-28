@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('Component/Navigation.ejs') %>
+
+<link rel="stylesheet" href="public/css/home.css">
+
+    <div class="container mt-5">
+    <h1>Welcome to the Library Management System</h1>
+    <p class="lead">Manage your library's books, members, and transactions efficiently.</p>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Books</h5>
+                    <p class="card-text">View, add, edit, or remove books from the library collection.</p>
+                    <a href="#" class="btn btn-primary">Manage Books</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Members</h5>
+                    <p class="card-text">Manage library members and their information.</p>
+                    <a href="#" class="btn btn-primary">Manage Members</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Issue/Return</h5>
+                    <p class="card-text">Issue books to members and handle returns seamlessly.</p>
+                    <a href="#" class="btn btn-primary">Issue/Return Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
