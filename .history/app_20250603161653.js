@@ -17,15 +17,15 @@ app.get("/add-todo",(req,res) => {
 })
 
 app.get("/update-todo",(req,res) => {
-    res.render("todo/upadte-todo")
+    res.render("todo/upadte")
 })
 
 app.get("/login-page",(req,res) => {
-    res.render("authentication/login")
+    res.render("loginpage")
 })
 
 app.get("/register",(req,res) => {
-    res.render("authentication/register")
+    res.render("registerpage")
 })
 
 

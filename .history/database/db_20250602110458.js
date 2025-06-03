@@ -30,7 +30,7 @@ db.blogs = require("../models/blogModel")(sequelize, DataTypes) //importing user
 db.products = require("../models/productModel")(sequelize, DataTypes) //importing product model
 
 
-sequelize.sync({alter: true }).then(() =>{
+sequelize.sync({alter: false }).then(() =>{
     console.log("migrated successfully")
 })
 module.exports = sequelize; //exporting the sequelize object to use in other files

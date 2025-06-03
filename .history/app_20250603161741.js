@@ -21,11 +21,11 @@ app.get("/update-todo",(req,res) => {
 })
 
 app.get("/login-page",(req,res) => {
-    res.render("authentication/login")
+    res.render("authentication/loginpage")
 })
 
 app.get("/register",(req,res) => {
-    res.render("authentication/register")
+    res.render("authregisterpage")
 })
 
 

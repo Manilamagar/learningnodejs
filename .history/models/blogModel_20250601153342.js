@@ -1,0 +1,1 @@
+const srequire("sequelize")

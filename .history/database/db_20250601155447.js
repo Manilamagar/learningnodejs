@@ -1,5 +1,5 @@
 //database connection ko code 
-const {Sequelize, DataTypes} = require("sequelize")
+const {Sequelize} = require("sequelize")
 require("dotenv").config() //to use environment variables from .env file
 //dotenv package lai use gareko xa jasko maddat le hami .env file bata environment variables use garna sakchhau
 //yo garepxi only hami dotenv ko data haru yo file ma access garna sakinxa
@@ -26,12 +26,7 @@ sequelize.authenticate()
 })
 
 const db = {}
-db.blogs = require("../models/blogModel")(sequelize, DataTypes) //importing user model
-db.products = require("../models/productModel")(sequelize, DataTypes) //importing product model
-
-
-sequelize.sync({alter: true }).then(() =>{
-    console.log("migrated successfully")
-})
+require("../models/userModel")(sequelize, DataTypes) //importing user model
+require
 module.exports = sequelize; //exporting the sequelize object to use in other files
 //yo file ma database connection gareko xa ra yo file lai aru file ma use garna ko lagi export gareko xa

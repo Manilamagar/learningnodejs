@@ -9,24 +9,17 @@ app.set ("view engine","ejs")
 
 
 app.get("/",(req,res) => {
-res.render("")
+
 })
 
-app.get("/add-todo",(req,res) => {
-   res.render("todo/add-todo") 
+app.get("/",(req,res) => {
+    
 })
 
-app.get("/update-todo",(req,res) => {
-    res.render("todo/upadte-todo")
+app.get("/",(req,res) => {
+    
 })
 
-app.get("/login-page",(req,res) => {
-    res.render("authentication/login")
-})
-
-app.get("/register",(req,res) => {
-    res.render("authentication/register")
-})
 
 
 

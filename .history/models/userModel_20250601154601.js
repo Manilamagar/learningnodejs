@@ -1,0 +1,2 @@
+const makeUserModel = (sequelize, DataTypes) => {
+}

@@ -13,19 +13,19 @@ res.render("")
 })
 
 app.get("/add-todo",(req,res) => {
-   res.render("todo/add-todo") 
+   res.render("addpage") 
 })
 
 app.get("/update-todo",(req,res) => {
-    res.render("todo/upadte-todo")
+    res.render("upadte")
 })
 
 app.get("/login-page",(req,res) => {
-    res.render("authentication/login")
+    res
 })
 
 app.get("/register",(req,res) => {
-    res.render("authentication/register")
+    
 })
 
 
