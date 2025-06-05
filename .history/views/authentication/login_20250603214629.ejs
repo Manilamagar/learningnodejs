@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      *{
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        background: url(background.jpg) no-repeat center center fixed;
+        width:100%;
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        background-size: cover;
+        background-position: center;
+      }
+      .container {
+        background: rgb(0,0,0,0.1);
+        width: 320px;
+        padding: 24px;
+        border-radius: 16px;
+        border: solid 5px rgb(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px);
+        box-shadow: 0px 0px 30px 20px rgb(0, 0, 0, 0.1);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .login-title {
+        margin-bottom: 16px;
+      }
+
+      .input-box{
+        display: flex;
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .input-box input {
+        width: 100%;
+        padding: 10px 16px 10px 38px;
+        border-radius: 99px;
+        border: solid 3px transparent;
+        outline: none;
+        caret-color: white;
+        font-weight: 500;
+        color: white;
+      }
+
+      .input-box input:focus {
+        border:solid 3px rgb(255, 255, 255, 0.25);
+      }
+
+      .input-box input::placeholder {
+        color : rgd(255, 2555, 255, 0.75);
+      }
+      .input-box input::-ms-reveal {
+        filter: invert(100%);
+      }
+
+      .input-box i {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(255, 255, 255, 0.75);
+        font-size:18px;
+        transition: 0.25s;
+      }
+
+      .input-box input:focus + i {
+        color: white;
+      }
+      .remember-forgot-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 16px;
+      }
+
+      .remember-forgot-box h5 {
+        font-weight:normal;
+      }
+
+      .rembember-me {
+        display:flex;
+        gap: 8px;
+      }
+
+      .forgot-password {
+        color: white;
+        text-decoration: none ;
+      }
+      .forgot-password:hover {
+        text-decoration: underline;
+      }
+
+      .login-button {
+        width: 100%;
+        margin-top
+        padding: 12px 0;
+        border-radius: 99px;
+        background: rgb(255, 255, 255, 0.1);
+        border: solid 3px transparent;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+    </style>
+</head>
+<body>
+  
+
+</body>
+</html>

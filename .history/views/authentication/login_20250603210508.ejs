@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a; /* Dark background similar to the image */
+    color: #fff;
+}
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid #0ef; /* Border color from the image */
+    overflow: hidden;
+    box-shadow: 0 0 25px #0ef; /* Box shadow from the image */
+    display: flex; /* To arrange the forms side-by-side or stacked */
+    border-radius: 15px; /* Slightly rounded corners for the wrapper */
+}
+
+.form-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.welcome-side {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background for welcome side */
+    color: white;
+    text-align: center;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+}
+
+.welcome-side h2 {
+    margin-bottom: 10px;
+}
+
+.welcome-side p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.welcome-side button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.welcome-side button:hover {
+    background-color: white;
+    color: #0072ff;
+}
+
+.input-side {
+    background-color: #282828; /* Darker background for input side */
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+.input-side h2 {
+    margin-bottom: 30px;
+    color: #0ef; /* Matching the border color */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #3a3a3a;
+    border: none;
+    border-bottom: 2px solid #0ef;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+.form-button {
+    background-color: #0ef;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.form-button:hover {
+    background-color: #00bfff;
+}
+
+/* Hidden class for JavaScript toggling */
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .welcome-side, .input-side {
+        border-radius: 0;
+        padding: 15px;
+    }
+
+    .welcome-side {
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+    }
+
+    .input-side {
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+    }
+}
+    </style>
+</head>
+<body>
+  
+    <div class="wrapper">
+        <div class="form-container login-form">
+            <div class="form-side welcome-side">
+                <h2>WELCOME BACK!</h2>
+                <p>We're happy to have you back! We hope you enjoy what you need to find. If you need anything, feel free to reach out</p>
+                <button id="showSignup">Don't have an account? Sign up</button>
+            </div>
+            <div class="form-side input-side">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="form-button">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="form-container signup-form hidden">
+            <div class="form-side welcome-side">
+                <h2>WELCOME!</h2>
+                <p>We're delighted to welcome you! We hope you enjoy what you find. If you need anything, feel free to reach out</p>
+                <button id="showLogin">Already have an account? Login</button>
+            </div>
+            <div class="form-side input-side">
+                <h2>Sign up</h2>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="form-button">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const showSignupBtn = document.getElementById('showSignup');
+        const showLoginBtn = document.getElementById('showLogin');
+        const loginForm = document.querySelector('.login-form');
+        const signupForm = document.querySelector('.signup-form');
+
+        showSignupBtn.addEventListener('click', () => {
+            loginForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+        });
+
+        showLoginBtn.addEventListener('click', () => {
+            signupForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+        });
+    </script>
+
+</body>
+</html>

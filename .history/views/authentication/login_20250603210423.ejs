@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  
+    <div class="wrapper">
+        <div class="form-container login-form">
+            <div class="form-side welcome-side">
+                <h2>WELCOME BACK!</h2>
+                <p>We're happy to have you back! We hope you enjoy what you need to find. If you need anything, feel free to reach out</p>
+                <button id="showSignup">Don't have an account? Sign up</button>
+            </div>
+            <div class="form-side input-side">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="form-button">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="form-container signup-form hidden">
+            <div class="form-side welcome-side">
+                <h2>WELCOME!</h2>
+                <p>We're delighted to welcome you! We hope you enjoy what you find. If you need anything, feel free to reach out</p>
+                <button id="showLogin">Already have an account? Login</button>
+            </div>
+            <div class="form-side input-side">
+                <h2>Sign up</h2>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="form-button">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const showSignupBtn = document.getElementById('showSignup');
+        const showLoginBtn = document.getElementById('showLogin');
+        const loginForm = document.querySelector('.login-form');
+        const signupForm = document.querySelector('.signup-form');
+
+        showSignupBtn.addEventListener('click', () => {
+            loginForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+        });
+
+        showLoginBtn.addEventListener('click', () => {
+            signupForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+        });
+    </script>
+
+</body>
+</html>
