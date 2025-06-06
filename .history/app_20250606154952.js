@@ -33,7 +33,7 @@ app.get("/register",(req,res) => {
 
 
 app.post('/register', async (req, res) => {
- //   console.log(req.body);
+    console.log(req.body)
     const{ username, email, password, confirm_password } = req.body
     if (password !== confirm_password) {
          res.send('Passwords do not match');

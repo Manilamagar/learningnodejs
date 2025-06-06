@@ -32,25 +32,7 @@ app.get("/register",(req,res) => {
 })
 
 
-app.post('/register', async (req, res) => {
- //   console.log(req.body);
-    const{ username, email, password, confirm_password } = req.body
-    if (password !== confirm_password) {
-         res.send('Passwords do not match');
-    }
-
-await db.users.create({
-         username,
-          email,
-         password
-          
-
-        
-    })
-    
-  res.send('User registered successfully')
-})
-
+n
 app.listen(3000,function(){
     console.log("Backend has started on port 3000")
 })
