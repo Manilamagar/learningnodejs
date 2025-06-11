@@ -1,0 +1,56 @@
+ <div className="min-h-screen bg-gray-100 p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Contact Us Form */}
+      <div className="bg-white p-6 rounded-2xl shadow-md">
+        <h2 className="text-2xl font-semibold mb-4">📩 Contact Us</h2>
+        <form className="space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      {/* To-Do List */}
+      <div className="bg-white p-6 rounded-2xl shadow-md">
+        <h2 className="text-2xl font-semibold mb-4">✅ To-Do List</h2>
+        <div className="flex mb-4">
+          <input
+            type="text"
+            placeholder="Add a task"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            className="flex-grow p-3 border rounded-l-lg focus:outline-none"
+          />
+          <button
+            onClick={addTask}
+            className="bg-green-500 text-white px-4 rounded-r-lg hover:bg-green-600 transition"
+          >
+            Add
+          </button>
+        </div>
+        <ul className="space-y-2">
+          {tasks.map((t, index) => (
+            <li key={index} className="p-3 bg-gray-100 rounded-lg shadow-sm">
+              {t}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>

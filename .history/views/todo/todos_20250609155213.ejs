@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View All Tasks - TodoMaster</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a00e0;
+    }
+
+    .task-list {
+      margin-top: 20px;
+    }
+
+    .task {
+      background: #f1f1f1;
+      border-left: 5px solid #4a00e0;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task.completed {
+      border-left-color: #28a745;
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .task-details {
+      flex-grow: 1;
+    }
+
+    .task-date {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .mark-btn {
+      background-color: #28a745;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>View All Tasks</h2>
+
+    <div class="task-list" id="taskList">
+      <!-- Example tasks -->
+      <div class="task">
+        <div class="task-details">
+          <strong>Buy groceries</strong>
+          <div class="task-date">Due: 2025-06-10</div>
+        </div>
+        <div class="task-actions">
+          <button class="mark-btn" onclick="markDone(this)">Complete</button>
+          <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+        </div>
+      </div>
+
+      <div class="task completed">
+        <div class="task-details">
+          <strong>Submit project report</strong>
+          <div class="task-date">Due: 2025-06-08</div>
+        </div>
+        <div class="task-actions">
+          <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function markDone(button) {
+      const task = button.closest(".task");
+      task.classList.add("completed");
+      button.remove(); // remove "Complete" button after marking done
+    }
+
+    function deleteTask(button) {
+      const task = button.closest(".task");
+      task.remove();
+    }
+  </script>
+</body>
+</html>
